@@ -7,10 +7,10 @@ Curso existente na plataforma [Udemy](https://www.udemy.com/course/programacao-o
 * Entendendo e implementando os conceitos de Composição;
 * Atividade relativa ao que foi aprendido no capitulo, segue exercício:
 
-![Screenshot](exercicioFixacao.png)
+![Screenshot](pictures/exercicioFixacao.png)
 
-![Screenshot](exemploES.png)
+![Screenshot](pictures/exemploES.png)
 
-![Screenshot](diagramaObj.png)
+![Screenshot](pictures/diagramaObj.png)
 
 Autor: `Matheus Glauber Rodrigues Jordão` [Linkedin](https://www.linkedin.com/in/matheusglauber/).
