@@ -6,21 +6,38 @@ using System.Text;
 namespace Modulo9.Models
 {
     class Order
-    {
-        public int Id { get; set; }
+    {        
         public DateTime Moment { get; set; }
         public OrderStatus Status { get; set; }
+        public Client Client { get; set; }
+        public List<OrderItem> OrderItens { get; set; }
 
-        public Order(int id, DateTime moment, OrderStatus status)
+        public Order(DateTime moment, OrderStatus status, Client cliente)
         {
-            Id = id;
             Moment = moment;
             Status = status;
+            Client = cliente;
+        }
+
+        public void AddItem(OrderItem item)
+        {
+            OrderItens.Add(item);
+        }
+
+        public void RemoveItem(OrderItem item)
+        {
+            OrderItens.Remove(item);
+        }
+        
+        public double Total()
+        {
+            // Falta Implementação do método.
+            return 0.0;
         }
 
         public override string ToString()
         {
-            return Id + ", " + Moment + ", " + Status;
+            return Moment + ", " + Status;
         }
     }
 }

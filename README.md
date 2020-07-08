@@ -5,6 +5,7 @@ Curso existente na plataforma [Udemy](https://www.udemy.com/course/programacao-o
 
 * Entendendo e implementando os conceitos Enumerações;
 * Entendendo e implementando os conceitos de Composição;
+* Entendendo e implementando os conceitos da Classe StringBuilder;
 * Atividade relativa ao que foi aprendido no capitulo, segue exercício:
 
 ![Screenshot](pictures/exercicioFixacao.png)
