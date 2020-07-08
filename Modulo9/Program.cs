@@ -7,18 +7,52 @@ namespace Modulo9
     class Program
     {
         static void Main(string[] args)
-        {
-            Order order1 = new Order(1, DateTime.Now, OrderStatus.PendingPayment);
+        {   
+            // Inserting datas a client
+            Console.WriteLine("Enter client data:");
+            Console.Write("Name: ");
+            string name = Console.ReadLine();
 
-            Console.WriteLine(order1.ToString());
+            Console.Write("Email: ");
+            string email = Console.ReadLine();
 
-            string status = OrderStatus.PendingPayment.ToString();
+            Console.Write("Birth date (DD/MM/YYYY): ");
+            DateTime birthDate = DateTime.Parse(Console.ReadLine());
 
-            Console.WriteLine(status);
+            // Instantiating a client
+            Client client = new Client(name, email, birthDate);
 
-            OrderStatus os = Enum.Parse<OrderStatus>(status);
+            // Instantiating a Order
+            Order order = new Order();
+            order.Client = client;
 
-            Console.WriteLine(os);
+            Console.WriteLine("Enter order data:");
+            Console.Write("Status: ");
+            OrderStatus status = Enum.Parse<OrderStatus>(Console.ReadLine());
+            order.Status = status;
+            order.Moment = DateTime.Now;
+
+            Console.Write("How many items to this order?: ");
+            int quantityOrders = int.Parse(Console.ReadLine());
+
+            for (int i = 0; i < quantityOrders; i++)
+            {
+                Console.WriteLine($"Enter #{i+1} item data:");
+                Console.Write("Product name: ");
+                string productName = Console.ReadLine();
+                Console.Write("Product price: ");
+                double productPrice = double.Parse(Console.ReadLine());
+                Console.Write("Quantity: ");
+                int quantity = int.Parse(Console.ReadLine());
+
+                Product product = new Product(productName, productPrice);
+                OrderItem orderItem = new OrderItem(quantity, productPrice, product);
+
+                order.AddItem(orderItem);
+            }
+
+            Console.WriteLine();
+            Console.WriteLine(order.ToString());
         }
     }
 }
