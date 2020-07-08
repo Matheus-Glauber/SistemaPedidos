@@ -31,8 +31,12 @@ namespace Modulo9.Models
         
         public double Total()
         {
-            // Falta Implementação do método.
-            return 0.0;
+            double total = 0;
+            foreach (var item in OrderItens)
+            {
+                total += item.SubTotal();
+            }
+            return total;
         }
 
         public override string ToString()
